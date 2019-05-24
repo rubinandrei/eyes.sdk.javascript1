@@ -107,8 +107,9 @@ class UserAgent {
     } else {
       if (oss.size > 1 && oss.has('android')) {
         osmatch = oss.get('android');
-      } else {
-        osmatch = Array.from(oss.values())[0];
+      } else {        
+        let key = oss.keys().next().value;        
+        osmatch = oss.get(key);
       }
 
       result._OS = osmatch[1];
